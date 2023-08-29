@@ -157,3 +157,33 @@
 2023-08-29 20:37:37,200 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2023-08-29 20:37:37,208 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\rahul\OneDrive\Desktop\AdvanceTrainingJavaMicroservices-main\AdvanceTrainingJavaMicroservices-main\(p6)ebookstoreapp\ebookstoreapp\src\test\resources
 2023-08-29 21:04:52,887 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-08-29 21:24:23,360 [Worker-30: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ebookstoreapp:0.0.1-SNAPSHOT @ C:\Users\rahul\eclipse-workspace3\ebookstoreapp\ebookstoreapp\pom.xml.
+2023-08-29 21:24:25,226 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ebookstoreapp/src/main/java
+2023-08-29 21:24:25,227 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ebookstoreapp/src/main/resources
+2023-08-29 21:24:25,229 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ebookstoreapp/src/main/resources
+2023-08-29 21:24:25,230 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ebookstoreapp/src/test/java
+2023-08-29 21:24:25,235 [Worker-30: Importing Maven projects] ERROR o.e.m.j.i.AbstractJavaProjectConfigurator - Failed to find a compatible VM for environment id 'JavaSE-17', falling back to workspace default
+2023-08-29 21:24:26,543 [Worker-30: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 4 sec
+2023-08-29 21:24:29,850 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-08-29 21:24:29,884 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-08-29 21:24:29,891 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\rahul\eclipse-workspace3\ebookstoreapp\ebookstoreapp\src\test\resources
+2023-08-29 21:24:37,465 [Worker-30: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:eBookStore-Config-Server:0.0.1-SNAPSHOT @ C:\Users\rahul\eclipse-workspace3\eBookStore-Config-Server\eBookStore-Config-Server\pom.xml.
+2023-08-29 21:24:39,109 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eBookStore-Config-Server/src/main/java
+2023-08-29 21:24:39,112 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eBookStore-Config-Server/src/main/resources
+2023-08-29 21:24:39,113 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eBookStore-Config-Server/src/main/resources
+2023-08-29 21:24:39,114 [Worker-30: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eBookStore-Config-Server/src/test/java
+2023-08-29 21:24:39,115 [Worker-30: Importing Maven projects] ERROR o.e.m.j.i.AbstractJavaProjectConfigurator - Failed to find a compatible VM for environment id 'JavaSE-17', falling back to workspace default
+2023-08-29 21:24:40,023 [Worker-30: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2023-08-29 21:24:40,715 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-08-29 21:24:40,753 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-08-29 21:24:40,762 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\rahul\eclipse-workspace3\eBookStore-Config-Server\eBookStore-Config-Server\src\test\resources
+2023-08-29 21:24:52,257 [Worker-34: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:eBookStore-Eureka-Server:0.0.1-SNAPSHOT @ C:\Users\rahul\eclipse-workspace3\eBookStore-Eureka-Server\eBookStore-Eureka-Server\pom.xml.
+2023-08-29 21:24:54,196 [Worker-34: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eBookStore-Eureka-Server/src/main/java
+2023-08-29 21:24:54,197 [Worker-34: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eBookStore-Eureka-Server/src/main/resources
+2023-08-29 21:24:54,198 [Worker-34: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eBookStore-Eureka-Server/src/main/resources
+2023-08-29 21:24:54,199 [Worker-34: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eBookStore-Eureka-Server/src/test/java
+2023-08-29 21:24:54,199 [Worker-34: Importing Maven projects] ERROR o.e.m.j.i.AbstractJavaProjectConfigurator - Failed to find a compatible VM for environment id 'JavaSE-17', falling back to workspace default
+2023-08-29 21:24:55,236 [Worker-34: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2023-08-29 21:24:55,897 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-08-29 21:24:55,928 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-08-29 21:24:55,934 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\rahul\eclipse-workspace3\eBookStore-Eureka-Server\eBookStore-Eureka-Server\src\test\resources

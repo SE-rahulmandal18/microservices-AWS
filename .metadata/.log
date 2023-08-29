@@ -372,3 +372,87 @@ java.util.concurrent.TimeoutException
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:23:47.089
+!MESSAGE Classpath changed for project: ebookstoreapp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:23:47.092
+!MESSAGE Boot project REMOVED: ebookstoreapp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:23:56.363
+!MESSAGE Classpath changed for project: eBookStore-Config-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:23:56.364
+!MESSAGE Boot project REMOVED: eBookStore-Config-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:02.848
+!MESSAGE Classpath changed for project: eBookStore-Eureka-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:02.849
+!MESSAGE Boot project REMOVED: eBookStore-Eureka-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:23.792
+!MESSAGE Classpath changed for project: ebookstoreapp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:24.995
+!MESSAGE Classpath changed for project: ebookstoreapp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:25.018
+!MESSAGE Boot project ADDED: ebookstoreapp
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2023-08-29 21:24:25.237
+!MESSAGE Failed to find a compatible VM for environment id 'JavaSE-17', falling back to workspace default
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:25.772
+!MESSAGE Classpath changed for project: ebookstoreapp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:38.312
+!MESSAGE Classpath changed for project: eBookStore-Config-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:39.013
+!MESSAGE Classpath changed for project: eBookStore-Config-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:39.030
+!MESSAGE Boot project ADDED: eBookStore-Config-Server
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2023-08-29 21:24:39.116
+!MESSAGE Failed to find a compatible VM for environment id 'JavaSE-17', falling back to workspace default
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:40.130
+!MESSAGE Classpath changed for project: eBookStore-Config-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:53.271
+!MESSAGE Classpath changed for project: eBookStore-Eureka-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:54.161
+!MESSAGE Classpath changed for project: eBookStore-Eureka-Server
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:54.183
+!MESSAGE Boot project ADDED: eBookStore-Eureka-Server
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2023-08-29 21:24:54.200
+!MESSAGE Failed to find a compatible VM for environment id 'JavaSE-17', falling back to workspace default
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-08-29 21:24:55.306
+!MESSAGE Classpath changed for project: eBookStore-Eureka-Server
+
+!ENTRY org.eclipse.jface 2 0 2023-08-29 21:30:53.489
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-29 21:30:53.490
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
