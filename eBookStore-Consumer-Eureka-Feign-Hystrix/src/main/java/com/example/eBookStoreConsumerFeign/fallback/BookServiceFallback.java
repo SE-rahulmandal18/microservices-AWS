@@ -17,6 +17,7 @@ public class BookServiceFallback implements BookServiceProxy{
 		return new ArrayList<Book>();
 	}
 
+	
 	@Override
 	public Book getBookById(int id) {
 		

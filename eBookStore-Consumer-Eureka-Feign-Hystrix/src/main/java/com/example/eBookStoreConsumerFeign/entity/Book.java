@@ -1,10 +1,7 @@
 package com.example.eBookStoreConsumerFeign.entity;
 
-
-
 public class Book {
 	
-
 	private Integer id;
 	private String title;
 	private String publisher;	
