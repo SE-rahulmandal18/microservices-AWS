@@ -1,0 +1,11 @@
+http://localhost:8080/books
+http://localhost:8080/actuator/env
+http://localhost:8888/actuator/env
+http://localhost:8888/book-service/dev/main
+http://localhost:8888/book-service/prod/main
+http://localhost:8080/books/2
+http://localhost:9997/get-books/1
+http://localhost:9996/get-books
+http://localhost:9996/get-books/5
+http://localhost:9995/get-books/1
+
