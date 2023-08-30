@@ -20,7 +20,7 @@ public class BookServiceFallback implements BookServiceProxy{
 	@Override
 	public Book getBookById(int id) {
 		
-		return new Book(id,"titlefallback","fallbackpublisher","123455",200,2021);
+		return new Book(id,"titlefallback","fallbackpublisher","123455","200","2021");
 	}
 
 }
