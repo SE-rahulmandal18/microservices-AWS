@@ -9,3 +9,7 @@ http://localhost:9996/get-books
 http://localhost:9996/get-books/5
 http://localhost:9995/get-books/1
 
+Eureka Dashboard-http://localhost:8761/
+RabbitMQ Dashboard-http://localhost:15672/#/queues
+
+RabbitMQ Docker image- docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
