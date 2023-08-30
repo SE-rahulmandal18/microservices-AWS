@@ -15,3 +15,6 @@ Eureka Dashboard-http://localhost:8761/
 RabbitMQ Dashboard-http://localhost:15672/#/queues
 
 RabbitMQ Docker image- docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+
+Hystrix Dasboard - http://localhost:9994/hystrix
+Hystrix Stream: http://localhost:9994/actuator/hystrix.stream
