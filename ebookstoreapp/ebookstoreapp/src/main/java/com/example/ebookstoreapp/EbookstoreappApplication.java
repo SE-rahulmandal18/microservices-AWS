@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import com.example.ebookstoreapp.entity.Book;
 import com.example.ebookstoreapp.repository.BookRepository;
 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class EbookstoreappApplication implements CommandLineRunner{
 
