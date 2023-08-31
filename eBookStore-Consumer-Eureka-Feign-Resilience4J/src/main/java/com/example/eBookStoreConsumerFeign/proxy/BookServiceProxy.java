@@ -20,17 +20,16 @@ public interface BookServiceProxy {
 	@GetMapping("/books/{id}")
 	public Book getBookById(@PathVariable("id")int id);
 	
-
 	
-	public default List<Book> fallbackMethodgetAllBooks() {
-		
+	public default List<Book> fallbackMethodgetAllBooks(Throwable cause) {
+		System.out.println("Exception Raised with the message:===>" + cause.getMessage());
 		return new ArrayList<Book>();
 	}
 
 	
-	
-	public default Book fallbackMethodgetBookById(int id) {
+	public default Book fallbackMethodgetBookById(int id ,Throwable cause) {
 		
+		System.out.println("Exception Raised with the message:===>" + cause.getMessage());
 		return new Book(id,"titlefallback","fallbackpublisher","123455","200","2021");
 	}
 
