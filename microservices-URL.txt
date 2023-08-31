@@ -20,3 +20,27 @@ Hystrix Dasboard - http://localhost:9994/hystrix
 Hystrix Stream: http://localhost:9994/actuator/hystrix.stream
 
 zuul proxy - http://localhost:7070/api/books
+
+implementing Circuit Breaker using Resilience4J on Ribbon Consumer 
+- http://localhost:9993/get-books/2
+
+
+ ----------------------------------------------------------EndPoints--------------------------------------------------------------------
+health status
+http://localhost:9993/actuator/health
+
+circiut Breaker List
+http://localhost:9993/actuator/circuitbreakers
+
+circiut Breaker Events
+http://localhost:9993/actuator/circuitbreakerevents
+
+http://localhost:9993/actuator/env
+http://localhost:9993/actuator/beans
+http://localhost:9993/actuator/metrics
+http://localhost:9993/actuator/info
+http://localhost:9993/actuator/configprops
+
+implementing Circuit Breaker using Resilience4J on Feign Consumer 
+- http://localhost:9992/get-books/2
+
