@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.eBookStoreConsumerFeign.entity.Book;
-import com.example.eBookStoreConsumerFeign.fallback.BookServiceFallback;
 
 @FeignClient(name="book-service")
 public interface BookServiceProxy {
