@@ -44,3 +44,11 @@ http://localhost:9993/actuator/configprops
 implementing Circuit Breaker using Resilience4J on Feign Consumer 
 - http://localhost:9992/get-books/2
 
+zipkin docker image - docker run -p 9411:9411 openzipkin/zipkin
+---------------------------------------------------------------------------------
+Prometheus--
+http://localhost:8992/get-books/2
+http://localhost:8992/actuator/prometheus
+
+docker run -p 9090:9090 -v C:\prometheus.yml prom/prometheus
+
