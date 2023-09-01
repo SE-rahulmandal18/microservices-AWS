@@ -21,8 +21,8 @@ public class BookClientController {
 
 	@Timed(value = "getBookById.time", description = "Taken time to return book")
 	@GetMapping("/get-books/{id}")
-	public Book getBookById(@PathVariable("id")int id)
-	{
+	public Book getBookById(@PathVariable("id")int id) {
+	
 		return bookService.getBookById(id);
 	}
 }

@@ -17,7 +17,6 @@ public class EBookStoreConsumerApplication {
 
 	@Bean
 	public TimedAspect timeAspect(MeterRegistry registry) {
-		
 		return new TimedAspect(registry);
 	}
 }
