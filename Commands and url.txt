@@ -1,0 +1,324 @@
+// Run on diffrent ports
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.application.instance_id=firstinstance --spring.profiles.active=prod --server.port=8777"
+
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.application.instance_id=secondinstance --spring.profiles.active=prod --server.port=8666"
+
+// Rabbit MQ
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+
+//Zipkin
+docker run -d -p 9411:9411 openzipkin/zipkin
+
+//AttendanceMicroServices[][][][][][][][][][]
+http://localhost:8092/attendance/mark [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "date": "2023-09-09",
+  "check_in": "09:00 AM",
+  "check_out": "05:00 PM",
+  "status": "Present"
+}
+
+http://localhost:8092/attendance/delete?id=1
+
+http://localhost:8092/attendance/update/1 [UPDATE]
+{
+  "date": "2023-09-10",
+  "check_in": "09:30 AM",
+  "check_out": "05:30 PM",
+  "status": "Present"
+}
+
+http://localhost:8092/attendance/all
+
+http://localhost:8092/attendance/employee?id=1
+
+//EmployeePayrollMicroServices[][][][][][][]
+http://localhost:8091/employees/{id}
+
+http://localhost:8091/employees
+
+http://localhost:8091/employees [POST]
+{
+  "name": "John Doe",
+  "mail_id": "john.doe@example.com",
+  "role": "Software Developer",
+  "category": "Full-Time",
+  "gender": "Male"
+}
+
+http://localhost:8091/employees/{id} [POST]
+{
+  "name": "Updated Name",
+  "mail_id": "updated.email@example.com",
+  "role": "Updated Role",
+  "category": "Part-Time",
+  "gender": "Female"
+}
+
+http://localhost:8091/employees/{id}
+
+//LeaveMicroServices[][][][][][][]
+http://localhost:8090/leaves/apply [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "leaveType": "Paid Leave",
+  "startDate": "2023-09-10",
+  "endDate": "2023-09-15",
+  "reason": "Vacation"
+}
+
+http://localhost:8090/leaves/delete/{id}
+
+http://localhost:8090/leaves/update/{id} [POST]
+{
+  "leaveType": "Sick Leave",
+  "startDate": "2023-09-20",
+  "endDate": "2023-09-22",
+  "reason": "Medical Leave"
+}
+
+http://localhost:8090/leaves/all
+
+http://localhost:8090/leaves/{id}
+
+http://localhost:8090/leaves/employee/{employeeId}
+
+//SalaryMicroServices[][][][][][][]
+http://localhost:8095/salary/all
+
+http://localhost:8095/salary/{salaryId}
+
+http://localhost:8095/salary/employee/{employee_id}
+
+http://localhost:8095/salary/{salaryId} [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "month": "September 2023",
+  "year": 2023,
+  "basicSalary": 5000,
+  "allowances": 1000,
+  "deductions": 500
+}
+
+http://localhost:8095/salary [POST]
+{
+  "employee": {
+    "id": 2
+  },
+  "month": "October 2023",
+  "year": 2023,
+  "basicSalary": 5500,
+  "allowances": 1100,
+  "deductions": 600
+}
+
+http://localhost:8095/salary/{salaryId}
+
+ToDoMicroService[][][][][][][]
+http://localhost:8093/todos [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "date_assigned": "2023-09-10",
+  "is_work_assigned": true,
+  "work_description": "Complete project X"
+}
+
+http://localhost:8093/todos/{id}
+
+http://localhost:8093/todos/{id} [POST]
+{
+  "date_assigned": "2023-09-12",
+  "is_work_assigned": false,
+  "work_description": "Reschedule project X"
+}
+
+http://localhost:8093/todos/scheduledWorks
+
+http://localhost:8093/todos/employee/{id}
+
+UserMicroService[][][][][][][]
+http://localhost:8094/users/register [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "username": "john.doe",
+  "password": "password123"
+}
+
+http://localhost:8094/users/login [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "password": "password123"
+}
+
+--------------------------------------------------
+|------------------------------------------------|
+|///////FEIGN RESILIENCE4J SLEUTH ZIPKIN\\\\\\\\\|
+|------------------------------------------------|
+--------------------------------------------------
+Attendance Consumer [][][][][][][]
+http://localhost:8999/mark-attendance [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "date": "2023-09-10",
+  "check_in": "09:00 AM",
+  "check_out": "05:00 PM",
+  "status": "Present"
+}
+
+http://localhost:8999/get-attendances
+
+http://localhost:8999/update-attendance/{id} [POST]
+{
+  "id": 1
+}
+
+http://localhost:8999/delete-attendance/{id}
+
+Employee Consumer [][][][][][][]
+http://localhost:8999/get-employee/{id}
+
+http://localhost:8999/get-employee
+
+http://localhost:8999/post-employee [POST]
+{
+  "name": "John Doe",
+  "mail_id": "john.doe@example.com",
+  "role": "Software Developer",
+  "category": "Full-Time",
+  "gender": "Male"
+}
+
+http://localhost:8999/put-employee/{id} [POST]
+{
+  "name": "Updated Name",
+  "mail_id": "updated.email@example.com",
+  "role": "Updated Role",
+  "category": "Part-Time",
+  "gender": "Female"
+}
+
+http://localhost:8999/delete-employee/{id}
+
+Leave Consumer [][][][][][][]
+http://localhost:8999/get-leave/{id}
+
+http://localhost:8999/get-leaves
+
+http://localhost:8999/post-leave [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "leaveType": "Paid Leave",
+  "startDate": "2023-09-10",
+  "endDate": "2023-09-15",
+  "reason": "Vacation"
+}
+
+http://localhost:8999/put-leave/{id} [POST]
+{
+  "leaveType": "Sick Leave",
+  "startDate": "2023-09-20",
+  "endDate": "2023-09-22",
+  "reason": "Medical Leave"
+}
+
+http://localhost:8999/delete-leave/{id}
+
+Salary Consumer [][][][][][][]
+http://localhost:8999/salary/all
+
+http://localhost:8999/salary/{salaryId}
+
+http://localhost:8999/salary/employee/{employee_id}
+
+http://localhost:8999/salary/{salaryId} [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "basicSalary": 5000,
+  "allowances": 1000,
+  "deductions": 500,
+  "netSalary": 5500
+}
+
+http://localhost:8999/salary [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "basicSalary": 5500,
+  "allowances": 1200,
+  "deductions": 600,
+  "netSalary": 6100
+}
+
+http://localhost:8999/salary/{salaryId}
+
+Todo Consumer [][][][][][][]
+http://localhost:8999/post-todos [POST]
+{
+  "date_assigned": "2023-09-10",
+  "is_work_assigned": true,
+  "work_description": "Complete project tasks"
+}
+
+http://localhost:8999/delete-todos/{id}
+
+http://localhost:8999/put-todos/{id} [POST]
+{
+  "date_assigned": "2023-09-15",
+  "is_work_assigned": false,
+  "work_description": "Review project progress"
+}
+
+http://localhost:8999/get-todos/scheduledWorks
+
+http://localhost:8999/get-todos/employee/{id}
+
+User Consumer [][][][][][][]
+http://localhost:8999/users/register [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "username": "john.doe",
+  "password": "mysecurepassword"
+}
+
+http://localhost:8999/users/login [POST]
+{
+  "employee": {
+    "id": 1
+  },
+  "password": "mysecurepassword"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
