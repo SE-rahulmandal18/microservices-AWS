@@ -1,0 +1,95 @@
+package com.employee_payroll.entities;
+
+import java.time.LocalDate;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors
+public class Attendance {
+
+	private int id;
+
+	private LocalDate date;
+
+	private String check_in;
+
+	private String check_out;
+
+	private String status;
+
+	public Attendance() {
+		super();
+	}
+
+	private Employee employee;
+
+	public Attendance(LocalDate date, String check_in, String check_out, String status, Employee employee) {
+		super();
+		this.date = date;
+		this.check_in = check_in;
+		this.check_out = check_out;
+		this.status = status;
+		this.employee = employee;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public String getCheck_in() {
+		return check_in;
+	}
+
+	public void setCheck_in(String check_in) {
+		this.check_in = check_in;
+	}
+
+	public String getCheck_out() {
+		return check_out;
+	}
+
+	public void setCheck_out(String check_out) {
+		this.check_out = check_out;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	@Override
+	public String toString() {
+		return "Attendance [id=" + id + ", date=" + date + ", check_in=" + check_in + ", check_out=" + check_out
+				+ ", status=" + status + ", employee=" + employee + "]";
+	}
+
+}
