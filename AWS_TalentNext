@@ -1,0 +1,808 @@
+AWS Cloud Practationer :
+
+DAY 1:
+
+- Client & server Model
+
+- A client makes a request & server fulfills the client req.
+
+
+What is cloud computing ?
+
+- Access services on demand
+- Avoid large upfront investments(capitalization)
+- Provision computing resources as needed
+- Pay only for what you use
+
+
+------------------------------------------------
+
+Cloud Coumputing Benefites ?
+
+a) variable expenses -> pay only for what you use
+b) Foucus on appliations and customers 
+c) capacity - scale in and scale out as needed
+
+d) Security - AWS implements robust security measures to protect data, including encryption, identity and access management, and compliance certifications.
+
+e) Reliability: AWS operates a global network of data centers with redundant infrastructure, ensuring high availability and reliability for services and applications.
+
+
+---------------------------------------------------
+
+Global Infrastructure :
+
+
+1) Region :
+   - Geographic location
+
+
+Determine the right Region for your service & application based on :-
+
+i. Compliance with data governance and legal requirements.
+
+ii. Proximity to the customer
+
+iii. Avaliable services within a Region
+
+iv.  Pricing
+
+------------------------------------------------------
+
+2) Availability Zones:
+   -Group of Physical data centers
+     
+---------------------------------------
+
+Amazon CloudFront
+ - is a content delivery network (CDN) service built for high performance, security, and developer convenience.
+
+
+Edge Locations : 
+  - A site that CloudFront uses to cache copies of your content for faster delivery to users at any location.
+
+
+---------------------------------------------------
+
+3 ways to interact with AWS:
+
+i.  AWS Management Console -  username & password
+
+ii. AWS Commam=nd Line (CLI) - Access key & secret Access key 
+
+iii. AWS software Development kit (SDK)  - Access key & secret Access key 
+
+
+
+---------------------------------------------------
+
+
+Compute in the cloud :
+
+Amazon EC2 :
+
+----------------------
+ 
+Amazon Instance type : (https://aws.amazon.com/ec2/instance-types/)
+
+i. General purpose -
+   
+  - Balances compute, memory and netwoking resources
+  - Suitable for a broad range of workloads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DAY 2:
+
+IAM
+ -Policy, Group, User
+         - Username, Password (permanent credentials)
+         - Access key & secrete access key
+
+-on-boarding(users)
+   -specfic privileges- Access the resources
+
+-----------------------------
+
+IAM Roles - Policy
+  -temporary credentials we get
+       -Access key & secrete access key
+       -15 mins - retained
+
+1) Cross Accounts
+2) Application - Resources
+
+-----------------------------
+
+
+AWS VPC:(Virtual Private Cloud)
+  -Networking Services
+
+1) VPC
+
+2) Subnet
+   -Public Subnet (internate Gateway)
+   -Private Subnet
+
+3) Route Table
+   -Association Relationship -Subnet
+   -Defines route
+
+4) Internate Gateway   
+
+----------------------------------------------------
+
+Network traffic in a VPC:
+  1)Network access control list(NACL)(act a as firewall)
+       - at subnet level
+    a)virtual firewall
+    b) by default network ACL allows all inbound 
+       & outbound traffic 
+    c) Custom NACLs - allow/deny inbound 
+       & outbound traffic 
+    d) NACL performs stateless packet filtering.
+
+  2)Security Group
+       - at instance(EC2) level (act a as firewall)
+       - statfull performs stateless packet filtering.
+       - by default security grp denies all inbound 
+         & outbound traffic 
+
+
+
+
+
+----------------------------------------------------
+
+AWS Certified Developer - Associate - S1
+
+
+Types od Cloud Models:
+
+1) Public Cloud
+2) Private Cloud
+3) Hybrid Cloud
+4) Community Cloud
+
+
+Types od Cloud Services:
+
+1) IaaS (Infrastructure as a Service) -> AWS, GCP, Azure
+
+2) PasS (Platform as a Service) -> PCF ,Heroku, AWS Elastic Beanstalk, Win Azure
+
+3) SaaS (Softwareas a Service) -> Salesforce, office 365, oracle,  HCM, Seibel
+
+---------------------------------------------------------------
+
+
+1) Region :
+   - Geographic location
+   - Each with multiple Availability Zones(AZ's) - atleast 2 services
+
+Region Name : MUMBAI  (https://awsregion.info/)
+Region: ap-south-1
+
+2) Availability Zones:
+   -Group of Physical data centers
+     
+  Availability Zones: (3 in Region: ap-south-1)
+   ap-south-1a
+   ap-south-1b
+   ap-south-1c
+
+
+Features of Multi-AZ's:
+1. High Availability
+2. Fault Tolerance
+3. Load Balancing 
+
+
+3) Edge Location: 25 (IN) -> (AWS CloudFront)
+   -Content Delivery Network(CDN)
+   -Cache - static file-  (html, css, js, video, zip)
+
+Features: 
+1. Faster performance
+2. Low Latency - delevering content to the user
+
+---------------------------------------------------------------
+
+Services :
+  3 ways-
+    1. AWS Management Console
+        -username, password
+
+    2. AWS CLI
+       - Access key, Seceret Access key
+
+    3. AWS SDK 
+       - Access key, Seceret Access key
+
+
+
+Why ?
+ -Full permission
+ -Access to all Aws services
+ -No way to restrict
+
+---------------------------------------------------------------
+
+Security, Identity & Compliance Service:
+ 
+IAM: (Identity and Acess Management) - FREE
+     -Global service (no need to select region)
+
+
+When we need to create user ?
+   -on-bording of a person in a project
+
+Then adding the user to group
+Assign policy to Group(Permisson)
+  -AWS Services
+
+1) User
+   -CSV File - username, pass, access key, secret access key
+
+
+
+---------------------------------------------------------------
+
+Account Manager:
+
+AWS Administor:(AdministorAccess)
+
+---------------------------------------------------------------
+
+
+DAY 2:
+
+Role & Policy
+    - Attached roles to trusted entities(EC2)
+    - Temporary Access key & Secrete AK
+    - Retension - 15 min for AK,SAK
+    - Metadata(169.254.169.254)-curl/postman
+    - Virtual machine is running
+
+ARN: (Amazon Resource Name)
+       -unique
+
+---------------------------------------------------------------
+
+AWS Web Identity Federation playground
+  https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/
+
+- Temporary AK, SAK
+   
+use case:
+  -Mobile   - Capture - storage(S3)
+  -Gaming   - Score   - NoSQL (DynamoDB)
+  -Logging   - session   - NoSQL (DynamoDB)
+
+---------------------------------------------------------------
+
+Step - Authenticate with Identity Provider
+
+- access token / id_token
+
+2. Obtain temporary sec
+
+
+
+Android :
+
+1. Facebook SDK : https://developers.facebook.com/docs/facebook-login/android
+
+
+
+
+
+
+
+---------------------------------------------------------------
+
+AWS EC2 - Instance - web, application, db, ftb,.........
+AWS RDS - Database(mysql, orcale, sqlserver, aurora, postgresql)
+AWS Redshif - Data Warehouse
+AWS EMR
+AWS ECS - Docker
+
+---------------------------------------------------------------
+
+
+IP(To launch VM)
+DB URL - DNS -IP
+
+---------------------------------------------------------------
+
+AWS VPC: (Virtual Private Cloud):
+
+Virtual private clouds (VPC)
+A VPC is a virtual network that closely resembles a traditional network that you'd operate in your own data center. After you create a VPC, you can add subnets.
+
+
+Subnet : 
+  A subnet is a segment or partion of VPC's IP Address range 
+  where u can isolate a group of resources.
+     E.g- A VPC with CIDR/22 include 1024 total IPs
+
+
+Key Attribute of Subnets:
+  - Subnet are subset of VPC CIDR block
+  - Subnet CIDR block cannot overlap
+  - Each subnet resides entirely with one Availability Zone
+  - An Availability zone can contain multiple subnets
+
+* AWS will reserve five IP address from each subnet
+
+
+Types of subnet:
+a) Public subnet (Local + IGW)
+b) Private subnet (Local)
+
+Route Table:
+  A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed.
+1. Req to direct traffic b/w VPC resources
+2. Each VPC has a main (default) route table
+3. You can create custom route table.
+4. All subnets must have an associated route table
+
+ -Subnet - Assocation
+ -Define Routes
+    -Local (IPv4, IPv6)  
+
+
+Internet Gateway:
+  - AWS Managed service-HA
+  - Provide route to Internet
+  - Create a Internet gateway
+  - Attach to VPC
+
+
+NAT Gateways (connecting private subnet to the internet) 
+ -Enable instance in the private subnet to initate outbound 
+  traffic to the internet or the AWS services.
+ -Prevent private instance from receiving ibound traffic from
+  the internet.
+
+Note- Create NAT Gateway for public subnet not for private subnet
+      & allocate Elastic IP .
+      Attach NAT Gateway to Private Route Table.
+
+---------------------------------------------------------------
+
+Security Groups :
+ - Virtual firewall that controls inbound and outbound traffic
+   into  AWS resources
+ - Traffic can be restricted by any IP protocol, port or 
+   IP  address 
+ - Rules are stateful
+
+   1.By default all inbouond traffic are blocked
+   2.allow all outbouond traffic 
+
+1) TalentNextWebServerSG:
+
+Inbound: 
+HTTP - 80 - 0.0.0.0/0 Anywhere
+SSH  - 22 - My IP
+
+Outbound:
+All Traffic
+
+2) TalentNextDBServerSG
+
+Inboud: 
+MySQL - 3303 - 0.0.0.0/0 Anywhere
+
+Outbound - All traffic 
+
+---------------------------------------------------------------
+
+Amazon EBS :
+   Volume types
+    1. General purpose SSD
+    2. Provisioned IOPS SSD
+    3. Magnetic
+
+---------------------------------------------------------------
+
+AWS instance types
+https://aws.amazon.com/ec2/instance-types/
+
+---------------------------------------------------------------
+
+Launching EC2 instance
+  steps:
+
+
+      Advanced Detalis
+         1. IAM Instance Profile 
+              -TalentNext_EC2_S3_Role
+         
+         2.user data
+              #!/bin/bash
+              sudo yum update -y 
+              sudo yum install httpd 
+              sudo install php
+              sudo service httpd start
+              cd/var/www/html
+              sudo wget https://us-west-2-tcprod.s3.amazonaws.com/
+ 
+
+
+
+
+
+
+---------------------------------------------------------------
+
+DAY 4:
+
+
+2 Seperate DB (so changes are not reflecting on other application)
+    H2 Database
+    In-memory DB
+
+-so to connecto to a centeralized Database we AWS RDS.
+
+---------------------------------------------------------------
+ 
+AWS RDS: (Relational Database Service)   
+
+  - Managed by AWS
+  - Abstraction for MySQL, Oracle, SQL, Server, MariaDB, 
+    Aurora(MySQL/PostgresSQL)
+      
+  
+  - High Availablity
+     - If we want RDS will make our DB highly available 
+       in Production 
+         it should must have Multiple AZ(Multiple Subnet)
+
+ -  MySQL, Oracle, SQL, Server, MariaDB, 
+    Aurora(MySQL/PostgresSQL)
+      - 1 Master - 1 Slave - Same Region (sync)
+  
+ 5 Read Replica - It is a database other than master database.
+         - To fire SELECT Queries Amazon reccomended to use
+           lauch Read Replica.
+           
+   - Same or Accross the region(Asynchronously updating data b/w Master and Read Replica)
+   
+   Read Replica 
+       - Will get Seperate Endpoint for master & slave
+       - Promote as Master if required.(disaster recovery)
+       - Can't perform insert, update, delete.   
+
+---------------------------------------------------------------
+
+AWS RDS
+
+ Steps : 
+   1. Create a Security Group
+   2. Create a Subnet Group 
+        (for master & slave e.g us-east-2a & us-east-2b)
+   3. Create Database & Engine Options
+                        (Msql, Amazon Aurora, Oracle etc.)
+
+   4. Template - Prod.
+   5. Availability & duration - Multi-AZ DB instance
+   6. Settings 
+   7. Storate
+   8. Connectivity - Selcet your VPC
+
+
+DB instance Identifier :talentnext
+username: admin
+password: talentnext123
+DB instance class: db.t3.large
+Initial database name: talentnext
+Endpoint: we get while creating database:
+     (talentnext.cpnyfmoif4cp.us-east-2-rds.amazonaws.com)
+
+
+user data :
+     
+#!/bin/bash
+sudo yum update -y 
+
+sudo yum install java-1.8.0 y
+
+sudo yum remove java-1.7.0-openjkd -y
+       
+sudo mkdir /opt/spring-boot-ec2-demo
+sudo cd /opt.spring-boot-ec2-demo
+
+sudo aws s3 cp s3://talentnext/spring-music-master-1.0.jar
+
+sudo java -jar -Dspring.profiles.active=mysql 
+-Dspring.datasource.username=admin 
+-Dspring.datasource.password=talentnext123
+-Dspring.datasource.url=jdbc:mysql://talentnext.cpnyfmoif4cp.us-east-2-rds.amazonaws.com:3306/talentnext spring-music-master-1.0.jar
+
+
+now launch
+EC2 instance = 
+  Webserver1 - http://18.188.142.253.8080/  Public IPv4
+  Webserver2 - http://3.15.320.50.8080/     Public IPv4
+
+  To Create Read Replica
+     1. Select your databasse. 
+     2. Click Action tab -> Read Replica
+
+---------------------------------------------------------------
+
+Advantage:
+  Aurora(MySQL/PostgresSQL)
+  
+-  1 Master - 3 Slave - same region (Sync)
+   15 Read replica  - same or accross region (async)
+ 
+-  At 1/10th of Cost
+-  Performance  -  Upto 5X of throughput of Standard MySQL
+                   Upto 3X of throughput of Standard PostgresSQL
+
+
+
+
+
+---------------------------------------------------------------
+
+DAY-5:
+
+Features of EC2:
+
+1. AWS Elastic Load Balancer:
+-Controlling Load Balancing - Manege Traffic
+-Check Health
+
+-AWS Managed Service - Horzontal Scaling
+-High Avaliablity (provide multiple subnets)
+
+-DNS
+
+
+
+
+---------------------------------------------------------------
+
+ASG: 
+  - Minimum
+  - Desired
+  - Maximum
+
+Automatic scaling:
+
+Dynamic Scaling Policy:
+
+CPU Utilization > 75
+ - Add - 1 Intance
+  
+CPU Utilization > 90
+ - Add - 2 Intance
+  
+CPU Utilization > 30
+ - Remove - 1 Instance
+
+
+1. policy type -   Step Scaling
+2. scaling policy name - TalentNextASGCPUUtilization
+3. create alarm- 
+    1.select matrix
+    2.EC2 -> by AutoSG -> Metric name(CPUUtilization)
+      -> Condition : Threshold type - static 
+    3.Alarm name - CPUUtilization-High
+
+---------------------------------------------------------------
+
+
+Serverless Architecture:
+  -S3
+
+Types of Storage:
+1. Block
+2. Object
+3. File
+
+
+EC2 - EBS
+  -Block Store
+
+AWS S3: (Simple Storage Service)
+- Object based storage
+- global service
+- unique bucket names
+- unlimeted files
+- High Available
+- Serverless
+
+---------------------------------
+
+Core Concepts:
+
+1. Bucket
+   root folder - unique names
+
+2. Object
+    - files/folders 
+
+3. Key - files name/ folder name
+
+---------------------------------
+
+Features:
+
+1. Bucket Versioning
+2. Storage Class - by default Standard SC
+3. Cross region replication (must Enable Versioning )
+4. Encryption
+5. LifeCycle Management
+6. Archiving - Glacier
+7. CORS - cross region
+8. Permissions
+9. Static Website hosting (HTML, CSS, JS, Angular, React17) 
+                 + AWS CloudFront (CDN)  
+10. Transfer acceleration
+
+---------------------------------
+
+Permissions :
+  - By default - Private
+
+2 ways :
+
+1. Access control list (ACL) 
+   a.Bucket level policy
+   b.Objcet level plocicy   
+
+2. Bucket Policy
+
+Block Public Access
+
+ i) Block public acces to buckets and objects granted through new 
+    access control list (ACLs) - unblock
+
+change Bucket Level Persmission
+      - List Objects
+      - Write Objects
+
+change Object Level Persmission
+        - Read Object
+
+ii) Block public acces to buckets and objects granted through any
+    access control list (ACLs) - unblock
+
+
+
+---------------------------------------------------------------
+
+DAY 6 :
+
+2. Bucket Policy
+
+{
+"Version": "2012-10-17",
+"Id": "PutObjPolicy",
+"Statement": [{
+  "Sid": "DenyObjectsThatAreNotSSEKMS",
+  "Principal": "*",
+  "Effect": "Deny",
+  "Action": "s3:PutObject",
+  "Resource": "arn:aws:s3:::talentnext2024/*",
+  "Condition": {
+    "Null": {
+      "s3:x-amz-server-side-encryption-aws-kms-key-id": "true"
+    }
+  }
+}]
+}
+
+
+---------------------------------------------------------------
+
+3. Pre-signed URLs:
+     - sort lived urls
+     - CLI/SDK to generate
+
+steps:
+- Install CLI tool
+
+- aws configure 
+- aws s3 presign s3://talentnext2024/aws.png --expires-in 120
+
+
+https://docs.aws.amazon.com/search/doc-search.html?searchPath=documentation-guide&searchQuery=sharing%20object%20using%20presigned%20urls&this_doc_product=Amazon%20Simple%20Storage%20Service&this_doc_guide=User%20Guide
+
+
+--------------------------------------
+
+Storage Classes:
+1. S3 Standard     - Frequently accessed data  
+2. S3 Standard IA  - Long lived, infrequently accessed data
+3. S3 One Zone IA  - Long lived, infrequently accessed data, 
+                     non crital data
+
+4. Amazon Glacier / Deep Archive - Archiving rarely accessed data
+       1. Expedited retrival
+       2. Standard retrival
+       3. Bulk retrival
+
+--------------------------------------
+
+Lifecycle Policies
+ Amazon S3 lifecycle policies allow us to delete or move object
+ based ages.
+
+
+
+----------------------------------------------------------------
+
+Amazon Lambda :
+
+
+
+
+
+usecase 1:
+
+AWS S3:
+ - IOTData - csv
+
+
+
+----------------------------------------------------------------
+
+DAY 7:
+
+
+Amazon DynamoDB:
+
+Core Components:
+1. Table
+2. Item - row
+3. Attributes - col
+
+-----------------------------------
+
+Create a Table:
+-Partition key + sort key
+
+DynamoDB supports two types of secondary indexes:
+
+Global secondary index — An index with a partition key and a sort key that can be different from those on the base table. A global secondary index is considered "global" because queries on the index can span all of the data in the base table, across all partitions. A global secondary index is stored in its own partition space away from the base table and scales separately from the base table.
+
+Local secondary index — An index that has the same partition key as the base table, but a different sort key. A local secondary index is "local" in the sense that every partition of a local secondary index is scoped to a base table partition that has the same partition key value.
+
+-----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
