@@ -1,0 +1,100 @@
+What is API ?
+Application Programming Interface 
+
+Set of rules and protocols that allow one software application
+to interact and communicate with another.
+
+so with the help of these rules and protocols two software applications or two software systems can communicate with each other
+so you can think of it like a messenger that delivers your
+request to the provider that you are asking a service from and then it delivers the response from the provider back to you in the form of the response.
+
+===================================================================
+
+Status Code- A status code is a numerical value returned by a server in response to a client's request, indicating the status of the request. Status codes are primarily used in HTTP responses to communicate whether a request was successful, encountered an error, or requires further action.
+
+1xx (Informational) – Request Received, Processing Continues
+
+100 Continue – The server has received the request headers and the client should proceed with sending the request body.
+
+101 Switching Protocols – The server is switching protocols as requested by the client (e.g., HTTP to WebSocket).
+
+===================
+
+2xx (Success) – Request Successfully Processed
+
+200 OK – The request was successful, and the server returned the expected response.
+
+201 Created – The request was successful, and a new resource was created.
+
+204 No Content – The request was successful, but there is no response body.
+
+======================
+
+301 Moved Permanently – The requested resource has been permanently moved to a new URL.
+
+302 Found (Moved Temporarily) – The requested resource is temporarily located at a different URL.
+
+304 Not Modified – The requested resource has not changed since the last request (used for caching).
+
+
+===========================
+
+
+4xx (Client Errors) – Request Issues from the Client Side
+
+400 Bad Request – The request is malformed or contains invalid parameters.
+401 Unauthorized – Authentication is required but missing or incorrect.
+403 Forbidden – The client does not have permission to access the resource.
+404 Not Found – The requested resource does not exist on the server.
+408 Request Timeout – The server timed out waiting for the client’s request.
+
+==========================
+
+5xx (Server Errors) – Issues from the Server Side
+
+500 Internal Server Error – A generic error message indicating the server encountered an issue.
+502 Bad Gateway – The server received an invalid response from an upstream server.
+503 Service Unavailable – The server is temporarily overloaded or down for maintenance.
+504 Gateway Timeout – The server, acting as a gateway, did not receive a timely response from an upstream server.
+
+===============================================================
+
+API requests are:
+
+1) GET (Retrieve Data)-
+Used to fetch data from the server.
+It does not modify any data used only to read data
+
+2) POST (Create Data)
+Used to send data to the server to create a new resource.
+
+3) PUT (Update Data)
+Used to update an existing resource.
+It replaces the entire resource with the new data.
+
+4) PATCH (Partial Update)
+Used to update partially an existing resource.
+Only the provided fields are updated.
+
+5) DELETE (Remove Data)
+Used to delete a resource from the server.
+
+=================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
