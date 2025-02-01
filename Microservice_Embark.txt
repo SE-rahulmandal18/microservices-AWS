@@ -83,6 +83,247 @@ Used to delete a resource from the server.
 
 
 
+package com.example.jobapp.job.impl;
+
+import com.example.jobapp.job.Job;
+//import com.example.jobapp.job.JobRepository;
+import com.example.jobapp.job.JobService;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class JobServiceImpl implements JobService {
+        private List<Job> jobs = new ArrayList<>();
+
+//    JobRepository jobRepository;
+    private Long nextId = 1L;  //manually managing the id to increment
+
+//    public JobServiceImpl(JobRepository jobRepository) {
+//        this.jobRepository = jobRepository;
+//    }
+
+    @Override
+    public List<Job> findAll() {
+        return jobs;
+//        return jobRepository.findAll();
+    }
+
+    @Override
+    public void createJob(Job job) {
+        job.setId(nextId++);
+        jobs.add(job);
+//        jobRepository.save(job);
+    }
+
+    @Override
+    public Job getJobById(Long id) {
+//        return  jobRepository.findById(id).orElse(null);
+
+        for (Job job : jobs){
+            if(job.getId().equals(id)){
+                return job;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean deleteJobById(Long id) {
+//        try {
+//            jobRepository.deleteById(id);
+//            return true;
+//        }catch (Exception e) {
+//            return false;
+//        }
+
+        Iterator<Job> iterator = jobs.iterator();
+        while (iterator.hasNext()){
+            Job job = iterator.next();
+            if(job.getId().equals(id)) {
+                iterator.remove();
+                return true;
+            }
+        }
+        return false;
+
+
+    }
+
+
+
+@Override
+public boolean updateJobById(Long id, Job updateJobById) {
+
+//    Optional<Job> jobOptional = jobRepository.findById(id);
+//    if(jobOptional.isPresent()) {
+//        Job job = jobOptional.get();
+//        job.setTitle(updateJobById.getTitle());
+//        job.setDescription(updateJobById.getDescription());
+//        job.setMinSalary(updateJobById.getMinSalary());
+//        job.setMaxSalary(updateJobById.getMaxSalary());
+//        job.setLocation(updateJobById.getLocation());
+//        return true;
+//    }
+//    return false;
+//}
+    for (Job job : jobs) {
+            if(job.getId().equals(id)) {
+                job.setTitle(updateJobById.getTitle());
+                job.setDescription(updateJobById.getDescription());
+                job.setMinSalary(updateJobById.getMinSalary());
+                job.setMaxSalary(updateJobById.getMaxSalary());
+                job.setLocation(updateJobById.getLocation());
+                return true;
+            }
+}
+        return false;
+                }
+
+}
+===========================
+
+package com.example.jobapp.job;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+//@Entity
+//@Table(name = "job_table")
+public class Job {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    private String description;
+    private String maxSalary;
+    private String minSalary;
+    private String location;
+
+    public Job() {
+    }
+
+    public Job(Long id, String title, String description, String maxSalary, String minSalary, String location) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.maxSalary = maxSalary;
+        this.minSalary = minSalary;
+        this.location = location;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getMaxSalary() {
+        return maxSalary;
+    }
+
+    public void setMaxSalary(String maxSalary) {
+        this.maxSalary = maxSalary;
+    }
+
+    public String getMinSalary() {
+        return minSalary;
+    }
+
+    public void setMinSalary(String minSalary) {
+        this.minSalary = minSalary;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+}
+
+
+==============
+
+package com.example.jobapp.job;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/jobs")
+public class JobController {
+
+    private JobService jobService;
+
+    public JobController(JobService jobService) {
+        this.jobService = jobService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Job>> findAll() {
+        return new ResponseEntity<>(jobService.findAll(), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<String> createJob(@RequestBody Job job){
+       jobService.createJob(job);
+        return new ResponseEntity<>("Job Added successfully", HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Job> getJobId(@PathVariable Long id){
+        Job job = jobService.getJobById(id);
+        if(job != null)
+            return new ResponseEntity<>(job, HttpStatus.OK);
+       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteJobById(@PathVariable Long id) {
+       boolean deleted =  jobService.deleteJobById(id);
+       if(deleted)
+           return new ResponseEntity<>("job deleted successfully",HttpStatus.OK);
+       return new ResponseEntity<>("job with id to be deleted not found", HttpStatus.NOT_FOUND);
+    }
+
+//    @RequestMapping(value ="/jobs{id}", method = RequestMethod.PUT)
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateJobById(@PathVariable Long id, @RequestBody Job updateJobById){
+        boolean updated = jobService.updateJobById(id, updateJobById);
+        if(updated)
+            return new ResponseEntity<>("Job updated successfully", HttpStatus.OK);
+        return new ResponseEntity<>("Job with the id to be updated not not found", HttpStatus.NOT_FOUND);
+    }
+}
 
 
 
